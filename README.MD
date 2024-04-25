@@ -1,6 +1,6 @@
 ### Mini Report
 
-This script was tested using a model checkpoint specified as `"your-model-checkpoint-url-on-huggingface"`, designed for next-token prediction in Python code. Below is a brief report containing the outcomes and observations from the experiment:
+This script was tested using a model checkpoint specified as `marco-molinari/python-code-millenials-1b`, designed for next-token prediction in Python code. Below is a brief report containing the outcomes and observations from the experiment:
 
 #### Training
 I fine tune: [code-millenials-1b](https://huggingface.co/budecosystem/code-millenials-1b) on the provided dataset. The model is good at conding and small enough to allow portability, but not trained on python specifically. I fine tune on python and the loss decrease is significant (1.4 to 0.8) even in just one epoch, and with 100k/1.4M examples from the dataset:

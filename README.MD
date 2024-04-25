@@ -4,22 +4,21 @@ This script was tested using a model checkpoint specified as `marco-molinari/pyt
 
 #### Training
 I fine tune: [code-millenials-1b](https://huggingface.co/budecosystem/code-millenials-1b) on the provided dataset. The model is good at conding and small enough to allow portability, but not trained on python specifically. I fine tune on python and the loss decrease is significant (1.4 to 0.8) even in just one epoch, and with 100k/1.4M examples from the dataset:
-![loss](loss.png)
+![loss](loss.jpg)
 #### Model Evaluation
 - **Input Code**: `"def hello_world():"`
 - **Output Predicted**:
-  ```
+```
   Predicted Code:
   def hello_world():
     return "Hello, World!"
-
-if __name__ == "__main__":
+  if __name__ == "__main__":
     print(hello_world())
+  In this example, the `hello_world` function is defined to return the string "Hello, World!". The `if __name__ == "__main__":` block is used to ensure that the function is only executed when the script is run directly (i.e., not imported as a module
 ```
 
-In this example, the `hello_world` function is defined to return the string "Hello, World!". The `if __name__ == "__main__":` block is used to ensure that the function is only executed when the script is run directly (i.e., not imported as a module
-  ```
 - This output demonstrates that the model intuitively captures the intent of a simple function and completes it appropriately.
+
 
 #### Quantization
 - **Quantization and Optimization**: As a next step, exploring model quantization could further enhance throughput and reduce model size, potentially enabling even swifter code completions and reducing hardware requirements.
